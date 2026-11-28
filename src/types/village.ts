@@ -19,7 +19,7 @@ export interface EnvironmentalWeekPoint {
   tempMax: number;
   humidity: number;
   soilMoisture: number;
-  mosquitoIndex: number;
+  waterContaminationIndex: number;
 }
 
 export interface RiskDriver {
@@ -40,7 +40,7 @@ export interface Village {
   humidity: number;
   rainfall: number;
   soilMoisture: number;
-  mosquitoIndex: number;
+  waterContaminationIndex: number;
   weeklyCases: WeeklyCasePoint[];
   forecastCases: WeeklyCasePoint[];
   environmentalHistory: EnvironmentalWeekPoint[];
@@ -71,4 +71,3 @@ export interface OverviewSummary {
   weekLabel: string;
   highRiskVillages: Village[];
 }
-

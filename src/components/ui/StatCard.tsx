@@ -11,16 +11,16 @@ interface StatCardProps {
 }
 
 const ACCENT_TEXT_MAP = {
-  neutral: 'text-slate-500',
+  neutral: 'text-[#5c6b54]',
   red: 'text-red-700',
   amber: 'text-amber-700',
-  green: 'text-emerald-700',
+  green: 'text-[#163300]',
 };
 
 const BADGE_TONE_MAP = {
   high: 'bg-red-50 text-red-700 border-red-200',
   elevated: 'bg-amber-50 text-amber-800 border-amber-200',
-  normal: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  normal: 'bg-[#e8f5e0] text-[#163300] border-[#cce3bf]',
 };
 
 export function StatCard({
@@ -32,20 +32,20 @@ export function StatCard({
   subtitle,
 }: StatCardProps) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-4">
-      <div className="text-xs font-medium text-slate-600">{label}</div>
+    <div className="rounded-2xl border border-[#e2e7df] bg-white p-5">
+      <div className="text-xs font-medium text-[#5c6b54]">{label}</div>
 
       <div className="mt-2 flex items-baseline gap-1.5">
-        <span className="text-2xl font-semibold tracking-tight text-slate-900 tabular-nums">
+        <span className="font-display text-2xl font-bold tracking-tight text-[#163300] tabular-nums">
           {value}
         </span>
-        {unit && <span className="text-sm font-medium text-slate-500">{unit}</span>}
+        {unit && <span className="text-sm font-medium text-[#5c6b54]">{unit}</span>}
       </div>
 
       {statusBadge && (
         <div className="mt-2">
           <span
-            className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[11px] font-medium ${BADGE_TONE_MAP[statusBadge.tone]}`}
+            className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold ${BADGE_TONE_MAP[statusBadge.tone]}`}
           >
             {statusBadge.text}
           </span>

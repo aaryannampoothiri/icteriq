@@ -30,17 +30,17 @@ interface EmptyStateProps {
 
 export function EmptyState({ title, description, actionLabel, onAction }: EmptyStateProps) {
   return (
-    <div className="flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-white px-6 py-12 text-center">
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-500">
+    <div className="flex flex-col items-center justify-center rounded-2xl border border-[#e2e7df] bg-white px-6 py-12 text-center">
+      <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#d4dbd0] bg-[#f4f6f3] text-[#163300]">
         <Inbox className="h-5 w-5" aria-hidden="true" />
       </div>
-      <h3 className="mt-3 text-sm font-semibold text-slate-900">{title}</h3>
-      <p className="mt-1 max-w-sm text-sm text-slate-500">{description}</p>
+      <h3 className="mt-3 font-display text-sm font-bold text-[#163300]">{title}</h3>
+      <p className="mt-1 max-w-sm text-sm text-[#5c6b54]">{description}</p>
       {actionLabel && onAction && (
         <button
           type="button"
           onClick={onAction}
-          className="mt-4 inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+          className="mt-4 inline-flex items-center rounded-full bg-[#9FE870] px-4 py-2 text-sm font-semibold text-[#163300] transition-colors hover:bg-[#8cd95c]"
         >
           {actionLabel}
         </button>
@@ -58,18 +58,18 @@ export function ErrorState({ message, onRetry }: ErrorStateProps) {
   return (
     <div
       role="alert"
-      className="flex flex-col items-center justify-center rounded-lg border border-red-200 bg-red-50/50 px-6 py-12 text-center"
+      className="flex flex-col items-center justify-center rounded-2xl border border-red-200 bg-red-50/50 px-6 py-12 text-center"
     >
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-red-200 bg-white text-red-600">
+      <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-red-200 bg-white text-red-600">
         <AlertCircle className="h-5 w-5" aria-hidden="true" />
       </div>
-      <h3 className="mt-3 text-sm font-semibold text-slate-900">Unable to load data</h3>
-      <p className="mt-1 max-w-md text-sm text-slate-600">{message}</p>
+      <h3 className="mt-3 font-display text-sm font-bold text-[#163300]">Unable to load data</h3>
+      <p className="mt-1 max-w-md text-sm text-[#45553d]">{message}</p>
       {onRetry && (
         <button
           type="button"
           onClick={onRetry}
-          className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-teal-600 px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-teal-700"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#163300] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#234d00]"
         >
           <RefreshCw className="h-4 w-4" aria-hidden="true" />
           Retry

@@ -17,7 +17,7 @@ export function App() {
   const [activePage, setActivePage] = useState<PageId>('overview');
   const [villages, setVillages] = useState<Village[]>([]);
   const [alerts, setAlerts] = useState<AlertItem[]>([]);
-  const [selectedVillageId, setSelectedVillageId] = useState<string>('kumbalangi');
+  const [selectedVillageId, setSelectedVillageId] = useState<string>('kothri');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Alerts page filter state
@@ -120,9 +120,13 @@ export function App() {
       onReviewHighRiskAlerts={handleReviewHighRiskAlerts}
     >
       {loading ? (
-        <LoadingSkeleton />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+          <LoadingSkeleton />
+        </div>
       ) : error ? (
-        <ErrorState message={error} onRetry={loadDashboardData} />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+          <ErrorState message={error} onRetry={loadDashboardData} />
+        </div>
       ) : activePage === 'overview' ? (
         <OverviewPage
           summary={summary}
