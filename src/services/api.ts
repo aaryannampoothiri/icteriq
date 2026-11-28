@@ -41,14 +41,6 @@ export async function fetchVillages(): Promise<Village[]> {
   return [...mockVillagesStore];
 }
 
-export async function fetchVillageById(villageId: string): Promise<Village | undefined> {
-  if (!USE_MOCK_DATA) {
-    return requestJson<Village>(`/api/villages/${encodeURIComponent(villageId)}`);
-  }
-  await simulateLatency(120);
-  return mockVillagesStore.find((v) => v.id === villageId);
-}
-
 export async function fetchAlerts(): Promise<AlertItem[]> {
   if (!USE_MOCK_DATA) {
     return requestJson<AlertItem[]>('/api/alerts');
